@@ -42,9 +42,13 @@ By default, the component doesn't get rendered in these states.
 The callback can also be used to change the container state.
 ```javascript
 const composer = cb => {
-  cb() // changes state to 'loading'
-  cb(new Error()) // changes state to 'error'
-  cb({...}) // remove any special states
+  // state defaults to 'loading'
+  http.get('/my/friends', (err, res) => {
+    // passing an error as first argument changes state to 'error'
+    if (err) cb(err)
+    // passing data removes any kind of special states
+    else cb({ friends: res })
+  });
 }
 ```
 You can provide custom components to be rendered in special states.
