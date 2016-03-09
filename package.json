@@ -1,13 +1,11 @@
 {
-  "name": "react-simple-composer",
+  "name": "react-simple-compose",
   "version": "0.0.1",
-  "description": "react-simple-composer",
+  "description": "Simple utility for composing stateless components with remote data.",
   "main": "index.js",
   "scripts": {
     "dev": "babel-node index.js",
-    "prebuild": "npm run clean; mkdir build",
-    "build": "npm run prebuild; babel ./src -d build",
-    "test": "",
+    "build": "mkdir build; babel ./src -d build",
     "lint": "eslint ./src --ext .js --ext .jsx; exit 0",
     "clean": "rm -rf build/"
   },
@@ -17,11 +15,12 @@
   },
   "keywords": [
     "react",
+    "async",
     "simple",
     "composer",
     "container"
   ],
-  "author": "Lucas Sunsi",
+  "author": "Lucas Sunsi <sunsi.lucas@gmail.com>",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/lsunsi/react-simple-composer/issues"
