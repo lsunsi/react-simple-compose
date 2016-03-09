@@ -4,6 +4,7 @@ import {
   createElement,
 } from 'react';
 
+/* eslint react/prefer-stateless-function:0 */
 export default function (composer, { loading: UILoading, error: UIError } = {}) {
   if (typeof composer !== 'function') {
     throw new Error('react-simple-compose: wrong composer type');
