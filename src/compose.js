@@ -4,7 +4,11 @@ import {
   createElement,
 } from 'react';
 
-export default function (composer, { loading: UILoading, error: UIError }) {
+export default function (composer, { loading: UILoading, error: UIError } = {}) {
+  if (typeof composer !== 'function') {
+    throw new Error('react-simple-compose: wrong composer type');
+  }
+
   return function wrap(UIComponent) {
     return class extends Component {
       state = {
@@ -36,6 +40,8 @@ export default function (composer, { loading: UILoading, error: UIError }) {
         if (loading) component = UILoading;
         else if (error) component = UIError;
         else component = UIComponent;
+
+        if (!component) return null;
 
         return createElement(
           component,

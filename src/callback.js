@@ -17,5 +17,5 @@ export default function (container, payload) {
         ...payload,
       },
     });
-  } else throw new Error();
+  } else throw new Error('react-simple-compose: wrong payload type');
 }
