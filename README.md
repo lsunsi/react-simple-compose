@@ -1,14 +1,17 @@
 # React Simple Compose
 
 
-### Description
+Description
+---
 Utility function designed to create containers for your React components, following the smart/dumb component philosophy.
 
-### Installation
+Installation
+---
 ```
 npm install react-simple-compose
 ```
-### Usage
+Usage
+---
 The package default export is a **compose** function.
 It expects a **composer** function as its first argument and returns a **container** function.
 ```javascript
@@ -76,6 +79,7 @@ render((
 ```
 
 
-### License
+License
+---
 
 MIT
