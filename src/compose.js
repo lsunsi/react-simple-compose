@@ -19,10 +19,15 @@ export default function (composer, { loading: UILoading, error: UIError } = {}) 
       };
 
       componentDidMount() {
+        this.mounted = true;
         composer(
           callback.bind(null, this),
           this.props,
         );
+      }
+
+      componentWillUnmount() {
+        this.mounted = false;
       }
 
       render() {
