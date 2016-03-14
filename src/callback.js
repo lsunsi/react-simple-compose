@@ -1,5 +1,5 @@
 export default function (container, payload) {
-  if (container.active) {
+  if (container.mounted) {
     if (payload === undefined) {
       container.setState({
         loading: true,

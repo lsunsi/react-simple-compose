@@ -19,7 +19,7 @@ export default function (composer, { loading: UILoading, error: UIError } = {}) 
       };
 
       componentDidMount() {
-        this.active = true;
+        this.mounted = true;
         composer(
           callback.bind(null, this),
           this.props,
@@ -27,7 +27,7 @@ export default function (composer, { loading: UILoading, error: UIError } = {}) 
       }
 
       componentWillUnmount() {
-        this.active = false;
+        this.mounted = false;
       }
 
       render() {
